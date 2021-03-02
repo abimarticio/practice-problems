@@ -67,9 +67,10 @@ def main():
     while True:
         cash_in = int(input("Enter cash: "))
         if cash_in >= total:
+            percent_discount = .2
             discount = input("Do you have citizen/PWD discount? ")
             if discount.upper() == "Y":
-                change = cash_in - (total - (total * .2))
+                change = cash_in - (total - (total * percent_discount))
                 print(f"I have received Php {cash_in}, your change is Php{change}")
                 
             elif discount.upper() == "N":
