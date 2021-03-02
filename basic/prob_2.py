@@ -25,3 +25,7 @@ names_dict = {}
 for key, value in enumerate(names):
     names_dict[key] = value
 print(names_dict)
+
+# solution_4
+dict_names = {key: value for key, value in enumerate(names)}
+print(dict_names)
