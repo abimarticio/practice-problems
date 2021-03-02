@@ -28,7 +28,7 @@ def user_input():
 
         elif user_input == 2:
             item = "Fries"
-            price =25
+            price = 25
             list_items.append(item)
             total_price.append(price)
 
@@ -61,10 +61,7 @@ def user_input():
 
 def main():
     items = user_input()
-
-    total = 0
-    for item in items:
-        total += item
+    total = sum(items)
     print(f"Total amount: Php {total}")
 
     while True:
