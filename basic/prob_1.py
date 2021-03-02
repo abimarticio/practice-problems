@@ -3,6 +3,6 @@
 hello = "hello"
 
 print(hello[::2])
-print(hello[:6:2])
+print(hello[:len(hello):2])
 print(hello[0::2])
-print(hello[0:6:2])
+print(hello[0:len(hello):2])
