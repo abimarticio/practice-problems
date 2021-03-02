@@ -12,6 +12,3 @@ for index in range(len(name)):
 
 for letter in name:
     print(f"***{letter}***")
-
-for index, letter in enumerate(name):
-    print(f"***{letter}***")
