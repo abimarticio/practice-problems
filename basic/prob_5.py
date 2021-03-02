@@ -66,7 +66,7 @@ def main():
 
     while True:
         cash_in = int(input("Enter cash: "))
-        if cash_in > total:
+        if cash_in >= total:
             discount = input("Do you have citizen/PWD discount? ")
             if discount.upper() == "Y":
                 change = cash_in - (total - (total * .2))
