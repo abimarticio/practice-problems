@@ -62,12 +62,13 @@ def user_input():
 def main():
     items = user_input()
     total = sum(items)
+    percent_discount = .2
+    discounted_total = total - (total * percent_discount)
     print(f"Total amount: Php {total}")
-
     while True:
         cash_in = int(input("Enter cash: "))
-        percent_discount = .2
-        if cash_in >= total or cash_in == total - (total * percent_discount):
+        
+        if cash_in >= total or cash_in == discounted_total:
             discount = input("Do you have citizen/PWD discount? ")
             if discount.upper() == "Y":
                 change = cash_in - (total - (total * percent_discount))
