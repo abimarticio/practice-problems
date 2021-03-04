@@ -66,20 +66,15 @@ def main():
     discounted_total = total - (total * percent_discount)
     print(f"Total amount: Php {total}")
     while True:
-        cash_in = int(input("Enter cash: "))
-        
-        if cash_in >= total or cash_in == discounted_total:
-            discount = input("Do you have citizen/PWD discount? ")
-            if discount.upper() == "Y":
-                change = cash_in - (total - (total * percent_discount))
-                print(f"I have received Php {cash_in}, your change is Php{change}")
-                
-            elif discount.upper() == "N":
-                change = cash_in - total
-                print(f"I have received Php {cash_in}, your change is Php {change}")
-            break
-        else:
-            print("Not enough cash. Try again.")
-            continue
+        discount = input("Do you have citizen/PWD discount? ")
+        if discount.upper() == "Y":
+            change = cash_in - (total - (total * percent_discount))
+            print(f"I have received Php {cash_in}, your change is Php{change}")
+            
+        elif discount.upper() == "N":
+            change = cash_in - total
+            print(f"I have received Php {cash_in}, your change is Php {change}")
+        break
+       
     
 main()
