@@ -76,6 +76,21 @@ def main():
         else:
             print("Invalid!\nEnter y for YES and n for NO")
             continue
-       
-    
+
+        while True:
+            cash_in = int(input("Enter cash: "))
+            if cash_in >= discounted_total and discount.upper() == "Y":
+                change = cash_in - discounted_total
+                print(f"I have received Php {cash_in}, your change is Php {change}")
+                break
+
+            elif cash_in >= total and discount.upper() == "N":
+                change = cash_in - total
+                print(f"I have received Php {cash_in}, your change is Php {change}")
+                break
+
+            else:
+                print("Not enough cash. Try again.")
+                continue
+        break
 main()
