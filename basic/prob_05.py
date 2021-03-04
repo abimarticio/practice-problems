@@ -68,13 +68,14 @@ def main():
     while True:
         discount = input("Do you have citizen/PWD discount? ")
         if discount.upper() == "Y":
-            change = cash_in - (total - (total * percent_discount))
-            print(f"I have received Php {cash_in}, your change is Php{change}")
+            print(f"Your new total amount is {discounted_total}")
             
         elif discount.upper() == "N":
-            change = cash_in - total
-            print(f"I have received Php {cash_in}, your change is Php {change}")
-        break
+            print(f"Your total amount is {total}")
+        
+        else:
+            print("Invalid!\nEnter y for YES and n for NO")
+            continue
        
     
 main()
