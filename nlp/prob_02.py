@@ -43,6 +43,19 @@ def get_occurrence_words(list_words: list):
     unique = Counter(list_words)
     return unique
 
+def get_char_largest_vocab(dict_lines: dict):
+    d = {}
+    new_d = {}
+    for key, value in dict_lines.items():
+        new_value = [word for line in value for word in line.split()]
+        d[key] = new_value
+    
+    for k in sorted(d, key=lambda k:len(d[k]), reverse=True):
+        key = k
+        value = len(d[k])
+        new_d[key] = value
+    top_1_char_most_vocab = dict(sorted(new_d.items(), key=lambda item: item[1], reverse=True)[:1])
+    return top_1_char_most_vocab
 
 def main():
     data = load_data(filename='avengers_endgame.txt')
@@ -50,9 +63,11 @@ def main():
     dict_lines = get_dict_lines(lines=lines)
     num_of_words = get_num_of_words(lines=lines)
     occurrence_words = get_occurrence_words(list_words=num_of_words)
+    char_largest_vocab = get_char_largest_vocab(dict_lines=dict_lines)
     total_num_words = len(num_of_words)
     print(f'Total number of words: {total_num_words}')
     print(f'Occurrence of each word: {occurrence_words}')
     print(f'Total number of: {occurrence_words}')
+    print(f'Character with the mos largest vocabulary: {char_largest_vocab}')
 
 main()
