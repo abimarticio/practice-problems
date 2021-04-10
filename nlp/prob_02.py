@@ -27,9 +27,23 @@ def get_dict_lines(lines: list):
         dict_lines[key].append(value)
     return dict_lines
 
+def get_num_of_words(lines: list):
+    list_words = []
+    for line in lines:
+        line = line.split(':')
+        line = line[1].split()
+        for word in line:
+            list_words.append(word.lower())
+    return list_words
+
+
+
 def main():
     data = load_data(filename='avengers_endgame.txt')
     lines = list_lines(data=data)
     dict_lines = get_dict_lines(lines=lines)
+    num_of_words = get_num_of_words(lines=lines)
+    total_num_words = len(num_of_words)
+    print(f'Total number of words: {total_num_words}')
 
 main()
