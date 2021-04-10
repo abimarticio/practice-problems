@@ -57,6 +57,15 @@ def get_char_largest_vocab(dict_lines: dict):
     top_1_char_most_vocab = dict(sorted(new_d.items(), key=lambda item: item[1], reverse=True)[:1])
     return top_1_char_most_vocab
 
+def get_char_most_lines(dict_lines: dict):
+    dict_char_lines = {}
+    for k in sorted(dict_lines, key=lambda k:len(dict_lines[k]), reverse=True):
+        key = k
+        value = len(dict_lines[k])
+        dict_char_lines[key] = value
+    top_1_char_most_line = dict(sorted(dict_char_lines.items(), key=lambda item: item[1], reverse=True)[:1])
+    return top_1_char_most_line
+
 def main():
     data = load_data(filename='avengers_endgame.txt')
     lines = list_lines(data=data)
@@ -69,5 +78,6 @@ def main():
     print(f'Occurrence of each word: {occurrence_words}')
     print(f'Total number of: {occurrence_words}')
     print(f'Character with the mos largest vocabulary: {char_largest_vocab}')
+    print(f'Character with the most lines: {char_most_lines}')
 
 main()
