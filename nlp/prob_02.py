@@ -16,8 +16,20 @@ def list_lines(data: list):
                 lines.append(line)
     return lines
 
+def get_dict_lines(lines: list):
+    dict_lines = {}
+    for line in lines:
+        new_line = line.split(':')
+        key = new_line[0].strip()
+        value = new_line[1].strip()
+        if key not in dict_lines:
+            dict_lines[key] = []
+        dict_lines[key].append(value)
+    return dict_lines
+
 def main():
     data = load_data(filename='avengers_endgame.txt')
     lines = list_lines(data=data)
+    dict_lines = get_dict_lines(lines=lines)
 
 main()
